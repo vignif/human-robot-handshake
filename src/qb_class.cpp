@@ -37,7 +37,7 @@ qb_class::qb_class(){
 	node_->param("/current", flag_curr_type_, false);
 	node_->param<double>("/step_time", step_time_, 0.002);
 	node_->param<string>("/port", port, "/dev/ttyUSB0");
-	node_->param<int>("/baudrate", br, 460800);
+	node_->param<int>("/baudrate", br, 2000000);
 
 	node_->searchParam("/IDcubes", aux);
 	node_->getParam(aux, ID_cube);
@@ -575,7 +575,7 @@ void qb_class::move() {
 }
 
 //-----------------------------------------------------
-//                                                 spin
+//                                             spinOnce
 //-----------------------------------------------------
 
 /*
@@ -588,43 +588,57 @@ void qb_class::move() {
 /
 */
 
-void qb_class::spin(){
+void qb_class::spinOnce(){
 
 	if (qb_comm_ == NULL){
 		cout << "[ERROR] Connection error in spin() function." << endl;
 		return;
 	}
 
-	// 1/step_time is the rate in Hz 
-	
+	if (flag_curr_type_)
+		// Read positions and Currents of all devices
+		readMeasCurrent();
+	else
+		// Read positions of all devices
+		readMeas();
+
+	// Set Position of all devices
+	move();
+
+	// Reset Referiments
+	p_1_.clear();
+	p_2_.clear();
+	pos_.clear();
+
+}
+
+//-----------------------------------------------------
+//                                                 spin
+//-----------------------------------------------------
+
+/*
+/ *****************************************************
+/ Read all devices and set position if new ref. is
+/ arrived.
+/ *****************************************************
+/   parameters:
+/   return:
+/
+*/
+
+void qb_class::spin(){
+
+	// 1/step_time is the rate in Hz
 	ros::Rate loop_rate(1.0 / step_time_);
 
-	while(ros::ok()){
-
-		if (flag_curr_type_)
-			// Read positions and Currents of all devices
-			readMeasCurrent();
-		else
-			// Read positions of all devices
-			readMeas();
-
-		// Set Position of all devices
-
-		move();
-
-		// Reset Referiments
-		p_1_.clear();
-		p_2_.clear();
-		pos_.clear();
-
-		// Ros spin
+	while(ros::ok()) {
+		spinOnce();
 
 		ros::spinOnce();
 
-		// Wait residual time
-
 		loop_rate.sleep();
 	}
+
 }
 
 //-----------------------------------------------------

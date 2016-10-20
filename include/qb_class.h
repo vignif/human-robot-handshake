@@ -40,20 +40,28 @@ class qb_class{
 		// Destructor
 		~qb_class();
 
+		// SpinOnce function
+		void spinOnce();
+
 		// Spin function
 		void spin();
 
 	protected:
-
-	private:
-
-		// Functions
-
 		// Open communication
 		bool open(const char*, const int);
 
 		// Close communication
 		bool close();
+
+		// Communication structure
+		comm_settings* qb_comm_;
+
+		// Step Time, 1 / step_time = communication frequency
+		double step_time_;
+
+	private:
+
+		// Functions
 
 		// Activation function
 		bool activate();
@@ -112,17 +120,11 @@ class qb_class{
 
 		bool flag_curr_type_;
 
-		// Step Time, 1 / step_time = communication frequency
-
-		double step_time_;
-
 		// Measurements Unit [DEG-RAD-TICK]
 
 		angular_unit meas_unit_;
 
-		// Communication structure
 
-		comm_settings* qb_comm_;
 
 		// Ros node handle
 
