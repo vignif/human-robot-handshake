@@ -8,6 +8,8 @@ ROS node for communicate with sequence and multi-sequence of qbDevice
 Otherwise:
   - .deb [indigo, jade] if you request it on our website
 
+###### Note: This code has been developed for ROS Indigo on ubuntu 14.04. No warranty for other distributions.
+
 # Configure
 Main parameters can be configurable by a YAML file, which is request during the call to qb_interface_node with "roslaunch" method.
 If you do not specify your yaml own custom file, by variable yamlFile:="PathToYourConfFile", a default yaml fill will be set.
