@@ -1006,7 +1006,7 @@ bool qb_class::readMeasCurrent() {
 		vector<float> pos_2;
 		vector<float> pos_L;
 
-		float position[2] = {0, 0};
+		float position[3] = {0, 0, 0};
 
 	    for (int i = cube_chain_.size(); i--;){
 	    	if (!cube_chain_[i]->getPosAndCurr(position, current, meas_unit_)){
