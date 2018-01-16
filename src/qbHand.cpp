@@ -230,5 +230,6 @@ bool qbHand::getPosAndCurr(float* position, float* current, angular_unit unit) {
     // save Currents
     current[0] = (float) curr[0];
     current[1] = (float) curr[1];
+
     return true;
 }
