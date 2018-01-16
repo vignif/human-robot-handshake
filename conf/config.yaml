@@ -5,5 +5,5 @@ current: true # [Activate current reader] -> True, [Deactivate current reader] -
 unit: 'RAD' # Unit of measurement, ['DEG', 'RAD', 'TICK']
 step_time: 0.0005 # Step time
 baudrate: 2000000 # BaudRate [200000, 460800]
-IDcubes: [1] # ID cubes in chain
-IDhands: [] # ID hands in chain
+IDcubes: [] # ID cubes in chain
+IDhands: [1] # ID hands in chain

@@ -189,6 +189,10 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+add_executable(qb_force_control src/main2.cpp src/qb_force_control.cpp src/qbCube.cpp src/qbHand.cpp src/qbInterface.cpp #/home/joao/code/qb_hand_stuff/qbAPI/src/qbmove_communications.cpp
+		src/qbmove_communications.cpp
+		)
+target_link_libraries(qb_force_control ${catkin_LIBRARIES})
 
 add_executable(qb_interface src/main.cpp src/qb_class.cpp src/qbCube.cpp src/qbHand.cpp src/qbInterface.cpp src/qbmove_communications.cpp)
 target_link_libraries(qb_interface ${catkin_LIBRARIES})
