@@ -1,3 +1,23 @@
+# iit changes
+To run you must:
+open a terminal (Ctrl+Alt+T) and write:
+```
+roscore
+```
+open another terminal:
+```
+roscd qb_interface/conf/
+rosparam load config.yaml
+rosrun qb_interface qb_force_control
+rostopic pub /qb_class/hand_ref qb_interface/handRef "closure: [9000]"
+``` 
+where the grasp closure is within [0-19000]
+Change stiffness with 
+```rosparam set /stiffness 0.1``` 
+where stiffness is from [0-1.0]
+
+
+
 # qb_interface_node
 ROS node for communicate with sequence and multi-sequence of qbDevice
 
