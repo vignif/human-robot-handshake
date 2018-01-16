@@ -1,4 +1,4 @@
-    // BSD 3-Clause License
+// BSD 3-Clause License
 
 // Copyright (c) 2017, qbrobotics
 // All rights reserved.
@@ -28,13 +28,13 @@
 // OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#include "qb_class.h"
+#include "qb_force_control.h"
 
 int main(int argc, char** argv){
 
     ros::init(argc, argv, "qb_interface_node");
 
-    qb_class qb_int;
+    qb_force qb_int;
 
     cout << "[INFO] Start to spin qb_interface_node" << endl;
 

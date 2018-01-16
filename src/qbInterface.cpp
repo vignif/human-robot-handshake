@@ -382,14 +382,13 @@ bool qbInterface::getMeasAndCurr(short int* meas, short int* curr) {
         cerr << "ERROR: Port not opened" << endl;
         return false;
     }
-
     if (commGetCurrAndMeas(cube_comm_, id_, aux) < 0)
         return false;
 
     // Current
-
     curr[0] = aux[0];
     curr[1] = aux[1];
+    printf("%d %d\n",curr[0],curr[1]);
 
     // Motor pos and axis direction
     
