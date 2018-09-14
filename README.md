@@ -1,4 +1,4 @@
-## Human-Robot Handshake 
+# Human-Robot Handshake 
 Using Pisa/IIT SoftHand node [qb_interface_node], and attaching  fsr sensors to the side of the robot hand as described in [ref] it is possible to set up a closed loop control of the robot force, from the human force.
 
 [qb_interface_node] package for Pisa/IIT SoftHand position control
@@ -10,7 +10,7 @@ Using Pisa/IIT SoftHand node [qb_interface_node], and attaching  fsr sensors to 
 [arduino] contains the source file that must be flashed on the Arduino board in order to manage the fsr sensors
 
 
-# controllers
+### controllers
 
 the package [handshake] contains:
 
@@ -29,7 +29,7 @@ if you want to save files acquiring data from the experiment modify the path.
 
 ================================================================
 
-# compile
+### compile
 before cloning this repo, create a catkin workspace, f.i. [ros_ws]
 type in a terminal:
 cd ros_ws
@@ -43,7 +43,7 @@ catkin_make
 
 
 
-# run
+### run
 
 rosparam load $(rospack find qb_interface)/conf/config.yaml
 
