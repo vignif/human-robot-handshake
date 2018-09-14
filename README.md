@@ -45,6 +45,13 @@ catkin_make
 
 # run
 
-rosparam load $(rospack find qb_interface)/conf/config.yam
+rosparam load $(rospack find qb_interface)/conf/config.yaml
+
+
+load the source in all used terminals, type:
+nano .bashrc
+go to the end of the file and add the following line:
+source ~/ros_ws/devel/setup.bash
+
 
 
