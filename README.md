@@ -29,7 +29,7 @@ if you want to save files acquiring data from the experiment modify the path.
 
 ================================================================
 
-### compile
+### DOWNLOAD & compile
 before cloning this repo, create a catkin workspace, f.i. [ros_ws]
 type in a terminal:
 cd ros_ws
@@ -37,7 +37,7 @@ cd ros_ws
 now you are in the folder /ros_ws with the cmd line. execute:
 git clone https://github.com/vignif/qb_interface_node.git
 
-rename the folder 'qb_interface_node_src' in 'src'
+rename the folder [qb_interface_node] in [src]
 type in the terminal:
 catkin_make
 
