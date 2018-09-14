@@ -43,9 +43,35 @@ if you want to save files acquiring data from the experiment modify the local pa
 
 
 ### run
+terminal 1:
+
+roscore
+
+
+terminal 2: (robot hand)
 
 rosparam load $(rospack find qb_interface)/conf/config.yaml
 
+rosrun qb_interface qb_force_control
+
+this is the node for the robot hand, for more details see README.md inside folder [qb_interface_node]
+
+
+terminal 3: (sensors)
+
+rosrun rosserial_python serial_node.py /dev/ttyACM0
+
+
+terminal 4: (delay the sensors)
+
+rosrun handshake delaynode.py
+
+
+terminal 5: (controller)
+
+[rosrun handshake ctrl_<idcontroller> <handsizecode> <userid>]
+
+================================================================
 
 load the source in all used terminals, type:
 
