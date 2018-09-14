@@ -45,6 +45,6 @@ catkin_make
 
 # run
 
-rosparam load $(rospack find qb_interface)/conf/config.yaml
+rosparam load $(rospack find qb_interface)/conf/config.yam
 
 
