@@ -55,5 +55,12 @@ go to the end of the file and add the following line:
 
 source ~/ros_ws/devel/setup.bash
 
+### IDE eclipse
 
+in order to setup eclipse for developing a ros project you have to:
+open a terminal type:
+
+cd /ros_ws
+
+catkin_make --force-cmake -G"Eclipse CDT4 - Unix Makefiles"
 
