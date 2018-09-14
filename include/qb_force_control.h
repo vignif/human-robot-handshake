@@ -3,8 +3,8 @@
 
 #include <qbInterface.h>
 #include <ros/ros.h>
-#include <qb_interface/handRef.h>
-#include <qb_interface/handPos.h>
+#include <handRef.h>
+#include <handPos.h>
 #include <vector>
 #include <qbHand.h>
 
