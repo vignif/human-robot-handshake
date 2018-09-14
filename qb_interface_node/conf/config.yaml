@@ -1,0 +1,9 @@
+port: '/dev/ttyUSB0' # communication port
+eq_preset: true # [Equilibrium/Preset] -> True , [P1/P2/PL] -> False
+hand_perc: true # [Hand command in percentual] -> True , [Hand command in TICK] -> False
+current: true # [Activate current reader] -> True, [Deactivate current reader] -> False
+unit: 'RAD' # Unit of measurement, ['DEG', 'RAD', 'TICK']
+step_time: 0.0005 # Step time
+baudrate: 2000000 # BaudRate [200000, 460800]
+IDcubes: [] # ID cubes in chain
+IDhands: [1] # ID hands in chain

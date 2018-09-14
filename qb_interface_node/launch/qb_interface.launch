@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<launch>
+
+	<!-- Set your own configuration file or the default file will be set -->
+
+	<arg name="yamlFile" default="$(find qb_interface)/conf/config.yaml"/>
+
+	<rosparam command="load" file="$(arg yamlFile)"/>
+
+	<node name="qb_interface_node" pkg="qb_interface" type="qb_interface" args="0" output="screen" />
+
+</launch>
