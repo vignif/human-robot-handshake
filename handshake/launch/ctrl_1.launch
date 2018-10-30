@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<!-- 
+use this launch file to run the human-robot handshake with controller 'robot follower' id=1
+this file automatically opens a Master and Parameter server. execute with this structure:
+"roslaunch handshake ctrl_1.launch a:=<handsize_id> b:=<participant_id>"
+where <handsize_id> is in [1:5] and <participant_id> is integer unbounded
+ -->
+
+
+<launch>
+	<arg name="yamlFile" default="$(find qb_interface)/conf/config.yaml"/>
+
+	<rosparam command="load" file="$(arg yamlFile)"/>
+
+	<node name="ctrl_1" pkg="handshake" type="ctrl_1" args="$(arg a) $(arg b)" output="screen" />
+	<node name="delay" pkg="handshake" type="delaynode.py" output="screen"/>
+	<node name="sensors" pkg="rosserial_python" type="serial_node.py" args="/dev/ttyACM0" output="screen"/>
+	<node name="robot_hand" pkg="qb_interface" type="qb_force_control" output="screen"/>
+
+</launch>
+
