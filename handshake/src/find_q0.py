@@ -154,10 +154,13 @@ class manage_cb:
         tosave = np.append(self.FSR, np.around(self.current , decimals=2))
         tosave = np.append(tosave, np.around(self.realpos , decimals=2))
         tosave = np.append(tosave, self.sentpos)
-        dir="/home/francesco/ros_ws_clean/ctrl/"
+        dir="/home/bot/ros_ws/ctrl/"
         name="find_q0"
-       
-        with open(dir + name + ".csv" , 'a') as f:
+	try:	
+		fh=open(dir + name + ".csv" , 'r')
+       	except IOError:
+		fh = open(dir + name + ".csv" , 'w')	
+        with 	open(dir + name + ".csv" , 'a') as f:
             writer = csv.writer(f)
             writer.writerow(tosave)         
         #print tosave

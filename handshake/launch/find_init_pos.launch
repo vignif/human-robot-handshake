@@ -13,10 +13,9 @@ where <handsize_id> is in [1:5] and <participant_id> is integer unbounded
 
 	<rosparam command="load" file="$(arg yamlFile)"/>
 
-	<node name="ctrl_1" pkg="handshake" type="ctrl_1" args="$(arg handsize_code) $(arg human_id)" output="screen" />
 	<node name="delay" pkg="handshake" type="delaynode.py" output="screen"/>
 	<node name="sensors" pkg="rosserial_python" type="serial_node.py" args="/dev/ttyACM0" output="screen"/>
 	<node name="robot_hand" pkg="qb_interface" type="qb_force_control" output="screen"/>
-
+	<node name="find_q0" pkg="handshake" type="find_q0.py" output="screen"/>
 </launch>
 

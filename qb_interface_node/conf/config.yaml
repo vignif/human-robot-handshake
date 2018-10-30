@@ -6,4 +6,4 @@ unit: 'RAD' # Unit of measurement, ['DEG', 'RAD', 'TICK']
 step_time: 0.0005 # Step time
 baudrate: 2000000 # BaudRate [200000, 460800]
 IDcubes: [] # ID cubes in chain
-IDhands: [1] # ID hands in chain
+IDhands: [2] # ID hands in chain

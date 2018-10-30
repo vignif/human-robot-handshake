@@ -242,7 +242,7 @@ string save_file(const string& name) {
 	it true create a new file with a incremental number in the name
 	 */
 
-	string dir = "/home/francesco/ros_ws_clean/ctrl/1/";
+	string dir = "/home/bot/ros_ws/ctrl/saves/";
 	string filename = dir + name;
 	int idx = 0;
 	string filetosave;
