@@ -81,6 +81,7 @@ go to the end of the file and add the following line:
 
 source ~/ros_ws/devel/setup.bash
 
+
 ### IDE eclipse
 
 in order to setup eclipse for developing a ros project you have to:
@@ -88,5 +89,10 @@ open a terminal type:
 
 cd /ros_ws
 
-catkin_make --force-cmake -G"Eclipse CDT4 - Unix Makefiles"
+catkin_make --force-cmake -G "Eclipse CDT4 - Unix Makefiles"
+
+
+### ROS plots
+plot the force resistors values
+open a terminal and type: 		rqt_plot /sensors_FSR_2_delay/data[0] /sensors_FSR_2_delayata[1]
 

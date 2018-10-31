@@ -16,6 +16,8 @@
 #include <fstream>
 #include <vector>
 #include <ctime>
+#include <math.h>
+
 
 using namespace std;
 string save_file(const string& name);
@@ -89,9 +91,10 @@ int main(int argc, char **argv)
 		if(in_contact){
 
 			//  in contact
-
-
-			q=0.5*compute_f_with_q0(q0)+0.5*Constant_Q;
+		// add time dependent behaviour
+		//	double t = ros::Time::now().toSec();
+		//	1000*sin(2*M_PI*t)
+			q=0.5*compute_f_with_q0(q0) + 0.5*Constant_Q;
 			outFile << Arr[0] << ", " << Arr[1]<< ", "<< Arr[2] << ", " << cb.closure << ", "<< cb.current <<endl;
 
 			state.closure.push_back(q); //round the closure value to the closest integer
