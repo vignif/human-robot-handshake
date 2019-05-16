@@ -9,7 +9,20 @@ Using Pisa/IIT SoftHand node [qb_interface_node], and attaching  fsr sensors to 
 
 [arduino] contains the source file that must be flashed on the Arduino board in order to manage the fsr sensors
 
+
+### Annex of may-19
+setup with empty machine:
+
+Ubuntu 18.04.1 LTS 
+install ROS melodic following http://wiki.ros.org/melodic/Installation/Ubuntu
+
+sudo apt update && sudo apt install --reinstall python-catkin-pkg python-catkin-pkg-modules
+pip install -U rosdep rosinstall_generator wstools rosinstall six vcstools
+pip install empy
+
+
 ### DOWNLOAD & compile
+
 before cloning this repo, create a catkin workspace, f.i. [ros_ws]
 type in a terminal:
 cd ros_ws
@@ -95,4 +108,8 @@ catkin_make --force-cmake -G "Eclipse CDT4 - Unix Makefiles"
 ### ROS plots
 plot the force resistors values
 open a terminal and type: 		rqt_plot /sensors_FSR_2_delay/data[0] /sensors_FSR_2_delayata[1]
+
+
+
+
 
