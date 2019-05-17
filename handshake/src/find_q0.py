@@ -12,6 +12,7 @@ from std_msgs.msg import Empty
 from std_msgs.msg import String
 import curses
 from datetime import datetime
+import os, inspect
 
 ##include for emergency break
 import sys, termios, atexit
@@ -154,7 +155,8 @@ class manage_cb:
         tosave = np.append(self.FSR, np.around(self.current , decimals=2))
         tosave = np.append(tosave, np.around(self.realpos , decimals=2))
         tosave = np.append(tosave, self.sentpos)
-        dir="/home/bot/ros_ws/ctrl/"
+	filepath=os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+        dir=os.path.dirname(os.path.dirname(filepath)) + "/find_q0_files/"
         name="find_q0"
 	try:	
 		fh=open(dir + name + ".csv" , 'r')
