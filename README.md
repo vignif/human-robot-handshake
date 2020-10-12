@@ -25,14 +25,20 @@ pip install empy
 
 before cloning this repo, create a catkin workspace, f.i. [ros_ws]
 type in a terminal:
+```
 cd ros_ws
+```
 
 now you are in the folder /ros_ws with the cmd line. execute:
+```
 git clone https://github.com/vignif/qb_interface_node.git
+```
 
 rename the folder [qb_interface_node] in [src]
 type in the terminal:
+```
 catkin_make
+```
 
 
 ### controllers
@@ -57,59 +63,58 @@ if you want to save files acquiring data from the experiment modify the local pa
 
 ### run
 terminal 1:
-
+```
 roscore
+```
 
 
 terminal 2: (robot hand)
-
+```
 rosparam load $(rospack find qb_interface)/conf/config.yaml
 
 rosrun qb_interface qb_force_control
-
+```
 this is the node for the robot hand, for more details see README.md inside folder [qb_interface_node]
 
 
 terminal 3: (sensors)
-
+```
 rosrun rosserial_python serial_node.py /dev/ttyACM0
-
+```
 
 terminal 4: (delay the sensors)
-
+```
 rosrun handshake delaynode.py
-
+```
 
 terminal 5: (controller)
-
+```
 [rosrun handshake ctrl_<idcontroller> <handsizecode> <userid>]
-
+```
 ================================================================
 
 load the source in all used terminals, type:
-
+```
 nano .bashrc
-
+```
 go to the end of the file and add the following line:
-
+```
 source ~/ros_ws/devel/setup.bash
-
+```
 
 ### IDE eclipse
 
 in order to setup eclipse for developing a ros project you have to:
 open a terminal type:
-
+```
 cd /ros_ws
 
 catkin_make --force-cmake -G "Eclipse CDT4 - Unix Makefiles"
-
+```
 
 ### ROS plots
 plot the force resistors values
-open a terminal and type: 		rqt_plot /sensors_FSR_2_delay/data[0] /sensors_FSR_2_delayata[1]
-
-
-
-
-
+open a terminal and type: 		
+```
+rqt_plot /sensors_FSR_2_delay/data[0] /sensors_FSR_2_delayata[1]
+``` 
